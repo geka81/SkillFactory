@@ -30,8 +30,8 @@ def convert(message: telebot.types.Message):
         if len(values) != 3:
             raise ConvertionException('Слишком много параметров.')
 
-            quote, base, amount = values
-            total_base = CryptoConvert.convert(quote, base, amount)
+        quote, base, amount = values
+        total_base = CryptoConvert.convert(quote, base, amount)
     except ConvertionException as e:
             bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     else:
